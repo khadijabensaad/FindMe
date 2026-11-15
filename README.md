@@ -1,7 +1,7 @@
 # Find Me 🛍️
 
 **Find Me** est une application mobile e-commerce développée dans le cadre d'un 
-stage de fin d'études (Licence Génie Logiciel & SI, ISSAT Sousse) au sein de la 
+stage de fin d'études (Licence Génie Logiciel & SI, ISI Sousse) au sein de la 
 société **Dot-IT**. Elle centralise la recherche de produits en boutiques 
 physiques pour offrir aux consommateurs une expérience d'achat fluide, rapide 
 et intuitive.
