@@ -1,0 +1,47 @@
+# ==== Flutter / Dart ====
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+android/.gradle/
+android/local.properties
+android/**/gradle-wrapper.jar
+android/key.properties
+*.iml
+*.g.dart
+*.freezed.dart
+.flutter-versions
+
+# ==== Express / Node.js ====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+
+# ==== Environnement / secrets ====
+.env
+.env.local
+.env.*.local
+!*.env.example
+
+# ==== IDE / éditeurs ====
+.vscode/
+.idea/
+*.iml
+.DS_Store
+
+# ==== Logs ====
+*.log
+logs/
+
+# ==== Build outputs ====
+dist/
+out/
