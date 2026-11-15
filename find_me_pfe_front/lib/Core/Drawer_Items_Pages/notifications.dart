@@ -3,7 +3,10 @@ import 'dart:convert';
 import 'package:find_me/Models/notification_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+<<<<<<< HEAD
 import 'package:find_me/core/api_config.dart';
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
@@ -18,7 +21,11 @@ class _NotificationsState extends State<Notifications> {
 
   Future<List<NotificationModel>> getAllNotiifications() async {
     List<NotificationModel> notifications = [];
+<<<<<<< HEAD
     const String url = "${ApiConfig.baseUrl}/notifications/";
+=======
+    const String url = "http://192.168.43.28:5000/notifications/";
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     final http.Response resp = await http.get(Uri.parse(url));
     var jsonResponse = jsonDecode(resp.body);
 

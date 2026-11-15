@@ -2,6 +2,10 @@ import 'package:find_me/Core/Search/osm_map.dart';
 import 'package:find_me/widgets/drawerwidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:permission_handler/permission_handler.dart';
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 class ShopsList extends StatefulWidget {
   final List<String> shops;
@@ -32,11 +36,24 @@ class _ShopsListState extends State<ShopsList> {
         child: ListView.separated(
           physics: NeverScrollableScrollPhysics(),
           itemBuilder:(context, index) => InkWell(
+<<<<<<< HEAD
             onTap: () {
               // the map screen handles the permission itself (GPS or a chosen city)
               shopName = widget.shops[index];
               Navigator.push(context, CupertinoPageRoute(builder: (context) => ShopMap(name: shopName)));
             },
+=======
+            onTap: ()async{
+                                        var status = await Permission.location.request();
+                                        if(status.isGranted){
+                                          shopName=widget.shops[index];
+                                          print("${shopName}");
+                                          Navigator.push(context, CupertinoPageRoute(builder: (context) => ShopMap(name: shopName)));
+                                        }else {
+                                          print("Location permission is required to use the app.");
+                                          }
+                                      },
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
             child: Container(
              clipBehavior: Clip.antiAlias,
                                         height: 100,

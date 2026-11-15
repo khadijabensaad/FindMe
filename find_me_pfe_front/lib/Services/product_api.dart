@@ -3,7 +3,10 @@ import 'package:find_me/Models/product_model.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+<<<<<<< HEAD
 import 'package:find_me/core/api_config.dart';
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 class ProductApiCall {
   late SharedPreferences prefs;
@@ -23,7 +26,11 @@ class ProductApiCall {
     var token = prefs.getString("userToken");
     try {
       const String url =
+<<<<<<< HEAD
           "${ApiConfig.baseUrl}/products/searchProductsWithFilter";
+=======
+          "http://192.168.43.28:5000/products/searchProductsWithFilter";
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
       final http.Response resp = await http.post(Uri.parse(url),
           headers: <String, String>{
@@ -63,7 +70,11 @@ class ProductApiCall {
     var token = prefs.getString("userToken");
     try {
       String url =
+<<<<<<< HEAD
           "${ApiConfig.baseUrl}/products/getProduct/${identifier}";
+=======
+          "http://192.168.43.28:5000/products/getProduct/${identifier}";
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
       final http.Response resp = await http.get(
         Uri.parse(url),
         headers: <String, String>{
@@ -92,7 +103,11 @@ class ProductApiCall {
     var token = prefs.getString("userToken");
     try {
       String url =
+<<<<<<< HEAD
           "${ApiConfig.baseUrl}/products/getProductByBarCode?barcode=${identifier}";
+=======
+          "http://192.168.43.28:5000/products/getProductByBarCode?barcode=${identifier}";
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
       final http.Response resp = await http.get(
         Uri.parse(url),
         headers: <String, String>{
@@ -152,7 +167,11 @@ class ProductApiCall {
   }
 
   Future<List<dynamic>> getDiscountedProducts() async {
+<<<<<<< HEAD
     final url = '${ApiConfig.baseUrl}/discounts/getDiscountedProducts';
+=======
+    final url = 'http://192.168.43.28:5000/discounts/getDiscountedProducts';
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     await initSharedPref();
     var token = prefs.getString("userToken");
     try {

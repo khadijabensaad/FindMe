@@ -9,8 +9,12 @@
     <application
         android:label="Find Me"
         android:name="${applicationName}"
+<<<<<<< HEAD
         android:icon="@mipmap/launcher_icon"
         android:usesCleartextTraffic="true">
+=======
+        android:icon="@mipmap/launcher_icon">
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -38,10 +42,13 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+<<<<<<< HEAD
     <!-- speech_to_text (Android 11+) -->
     <queries>
         <intent>
             <action android:name="android.speech.RecognitionService" />
         </intent>
     </queries>
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 </manifest>

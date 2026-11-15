@@ -14,7 +14,10 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+<<<<<<< HEAD
 import 'package:find_me/core/api_config.dart';
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key, this.req});
@@ -72,7 +75,11 @@ class _SearchPageState extends State<SearchPage> {
   Future<void> addToFavorites(String prodId) async {
     await initSharedPref();
     var reqBody = jsonEncode({'prodId': prodId});
+<<<<<<< HEAD
     String url = '${ApiConfig.baseUrl}/auth/addToFavorites';
+=======
+    String url = 'http://192.168.43.28:5000/auth/addToFavorites';
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     var response = await http.put(Uri.parse(url),
         headers: {
           'Content-Type': 'application/json',

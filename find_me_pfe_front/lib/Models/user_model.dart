@@ -33,11 +33,19 @@ class UserModel {
 
     factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         id: json["_id"],
+<<<<<<< HEAD
         username: json["username"] ?? '',
         email: json["email"],
         password: json["password"] ?? '',
         activated: json["activated"],
         image: json["image"] ?? '',
+=======
+        username: json["username"],
+        email: json["email"],
+        password: json["password"],
+        activated: json["activated"],
+        image: json["image"],
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
         role: json["role"],
         favorites: List<dynamic>.from(json["favorites"].map((x) => x)),
         createdAt: DateTime.parse(json["createdAt"]),

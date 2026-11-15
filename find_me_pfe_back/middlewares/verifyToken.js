@@ -14,8 +14,12 @@ exports.verifyToken = async (req, res, next) => {
         req.userRole = decoded.role
         next()
     } catch (err) {
+<<<<<<< HEAD
         // expired / invalid token is an authentication problem, not a server error
         const expired = err && err.name === 'TokenExpiredError'
         res.status(401).json({ status: false, message: expired ? 'Session expired, please log in again' : 'Invalid token' })
+=======
+        res.status(500).json({ status: false, message: err.message })
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     }
 };

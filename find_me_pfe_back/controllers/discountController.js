@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 const aiRepo = require('../services/catalogRepository');
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 const discountModel = require('../models/discountModel');
 const productModel = require('../models/productModel');
 const userModel = require('../models/userModel');
@@ -44,7 +47,10 @@ module.exports.getDiscountByValue = async (req, res, next) => { //
 }; 
 
 module.exports.addDiscount = async (req, res, next) => {
+<<<<<<< HEAD
     aiRepo.invalidate();
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
   try {
     const { value, sale_products } = req.body;
 
@@ -94,7 +100,10 @@ module.exports.addDiscount = async (req, res, next) => {
 };
 
 module.exports.deleteDiscount = async (req, res, next) => {
+<<<<<<< HEAD
     aiRepo.invalidate();
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
   try {
     const {prods} = req.body;
 
@@ -156,7 +165,10 @@ module.exports.getDiscountedProducts = async (req, res) => {
 
 
 module.exports.emptyDiscount = async (req, res, next) => {
+<<<<<<< HEAD
     aiRepo.invalidate();
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
   try {
     const {id} = req.params;
     const discount = await discountModel.findById(id);

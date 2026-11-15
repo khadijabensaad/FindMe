@@ -18,6 +18,7 @@ var categoryRouter = require('./routes/category');
 var authRouter = require('./routes/auth');
 var chatbotRouter = require('./routes/chatbot');
 var notificationRouter =require("./routes/notification")
+<<<<<<< HEAD
 // FINDME AI layer
 var recommendationRouter = require('./routes/recommendation');
 var preferenceRouter = require('./routes/preference');
@@ -26,6 +27,8 @@ var outfitRouter = require('./routes/outfit');
 var alertRouter = require('./routes/alert');
 var searchRouter = require('./routes/search');
 const llm = require('./services/llmClient');
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 
 var app = express();
@@ -51,12 +54,15 @@ app.use('/categories', categoryRouter);
 app.use('/auth', authRouter);
 app.use('/chatbot', chatbotRouter);
 app.use("/notifications",notificationRouter)
+<<<<<<< HEAD
 app.use('/recommendations', recommendationRouter);
 app.use('/preferences', preferenceRouter);
 app.use('/interactions', interactionRouter);
 app.use('/outfits', outfitRouter);
 app.use('/alerts', alertRouter);
 app.use('/search', searchRouter);
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -76,6 +82,7 @@ app.use(function(err, req, res, next) {
 
 //module.exports = app;   na7ineha khater ken yranni ala dossier bin/www
 const server = http.createServer(app); //configurina serveur mte3na bech yekhdem bel http
+<<<<<<< HEAD
 const PORT = process.env.PORT || 5000;
 server.listen(PORT,()=>{connectToMongoDB();
 console.log(`app is running on port ${PORT}`);
@@ -84,4 +91,8 @@ console.log(llm.isEnabled()
   ? `AI Stylist: LLM enabled (${c.provider} · ${c.model})`
   : 'AI Stylist: no LLM configured -> rule-based understanding + templates (set LLM_* in .env)');
 }); //serveur 7attineh yemchi 3al port 5000(generalement port 5000 mta3 developpement back w 3000 front)
+=======
+server.listen(process.env.PORT,()=>{connectToMongoDB();
+console.log('app is running on port 5000')}); //serveur 7attineh yemchi 3al port 5000(generalement port 5000 mta3 developpement back w 3000 front)
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 // najmou n7otou process.env.PORT fi blaset 5000

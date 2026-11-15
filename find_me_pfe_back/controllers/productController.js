@@ -4,7 +4,10 @@ const Shop = require('../models/shopModel');
 const Category = require('../models/categoryModel');
 const userModel = require('../models/userModel');
 const discountModel = require('../models/discountModel');
+<<<<<<< HEAD
 const aiRepo = require('../services/catalogRepository'); // FINDME AI: interaction log + catalogue cache
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 const cloudinary = require('cloudinary').v2;
 const { validationResult } = require('express-validator');
 const dotenv = require('dotenv')
@@ -50,9 +53,12 @@ module.exports.getAllProducts = async (req, res, next) => {
       const user = await userModel.findById(req.userId).select('favorites');
       const isFavorite = user.favorites.includes(product._id);
   
+<<<<<<< HEAD
       // FINDME AI: a product view is an implicit signal for Style DNA & trends
       aiRepo.logInteraction({ userId: req.userId, productId: product._id, type: 'view' }).catch(() => {});
 
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
       // Return product data along with 'isFavorite' flag
       const prodData = { ...product._doc, isFavorite };
       return res.status(200).json(prodData);
@@ -170,7 +176,10 @@ module.exports.addProduct = async (req, res, next) => {
         });
         const addedProduct= await product.save();
         await Brand.findByIdAndUpdate(brand_id, { $push: { products: product._id } });
+<<<<<<< HEAD
         aiRepo.invalidate();
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
         res.status(201).json(addedProduct);
       }catch(error){
         res.status(500).json({message: error.message});
@@ -188,8 +197,12 @@ module.exports.deleteProduct = async (req, res, next) => {
       await Brand.updateMany({}, { $pull: { products: checkIfProductExists._id } });
       await Shop.updateMany({}, { $pull : { products: checkIfProductExists._id } });
       await Category.updateMany({}, { $pull : { products: checkIfProductExists._id } });
+<<<<<<< HEAD
       aiRepo.invalidate();
         res.status(200).json("Deleted Product!");
+=======
+      res.status(200).json("Deleted Product!");
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
@@ -216,7 +229,10 @@ module.exports.updateProduct = async (req, res, next) => { //ne9sa modifications
         { new: true}
         );
 
+<<<<<<< HEAD
         aiRepo.invalidate();
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
         res.status(200).json("Updated Product!");
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -289,10 +305,14 @@ module.exports.searchProductsWithFilter = async (req, res, next) =>{
             query.shops = { $in: shopNames }; // Filter products based on shop IDs in the specified region
         }
         if(req.body.colors){
+<<<<<<< HEAD
             // the app sends one colour as a string: $in needs an array (crashed before)
             const colors = Array.isArray(req.body.colors) ? req.body.colors : String(req.body.colors).split(',');
             const clean = colors.map((c) => String(c).trim()).filter(Boolean);
             if (clean.length) query.colors = { $in: clean.map((c) => new RegExp(`^${c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, 'i')) };
+=======
+            query.colors= { $in: req.body.colors };
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
         }
         if(req.body.size){
             if( JSON.stringify(req.body.size) === JSON.stringify([])){

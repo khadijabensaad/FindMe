@@ -1,7 +1,10 @@
 import 'package:find_me/Auth/login.dart';
 import 'package:find_me/main_screen.dart';
 import 'package:find_me/starting.dart';
+<<<<<<< HEAD
 import 'package:find_me/theme/app_theme.dart';
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
@@ -54,6 +57,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   }
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -84,8 +88,18 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               const SizedBox(height: 40),
             ]),
           ),
+=======
+    return  Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(image: AssetImage("assets/images/splash.png"),fit: BoxFit.cover),
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
         ),
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267

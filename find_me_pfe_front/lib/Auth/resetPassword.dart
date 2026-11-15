@@ -4,7 +4,10 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:find_me/core/api_config.dart';
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 class ResetPassword extends StatefulWidget {
   const ResetPassword({super.key, required this.email});
@@ -36,7 +39,11 @@ class _ResetPasswordState extends State<ResetPassword> {
 
   Future<void> resetPassword(String pwd) async {
     var reqBody = jsonEncode({"email": widget.email, "password": pwd});
+<<<<<<< HEAD
     String url = '${ApiConfig.baseUrl}/auth/resetPassword';
+=======
+    String url = 'http://192.168.43.28:5000/auth/resetPassword';
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     var response = await http.post(Uri.parse(url),
         headers: {'Content-Type': 'application/json'}, body: reqBody);
     var jsonResponse = jsonDecode(response.body);

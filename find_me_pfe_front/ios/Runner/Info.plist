@@ -2,6 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+<<<<<<< HEAD
 	<key>NSMicrophoneUsageDescription</key>
 	<string>FINDME uses the microphone for voice search with the AI stylist.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
@@ -12,6 +13,8 @@
 	<string>FINDME lets you pick a photo to find similar clothes.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>FINDME shows the shops closest to you.</string>
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

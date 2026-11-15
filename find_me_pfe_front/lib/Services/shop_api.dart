@@ -2,7 +2,10 @@ import 'dart:convert';
 import 'package:find_me/Models/shop_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+<<<<<<< HEAD
 import 'package:find_me/core/api_config.dart';
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 class ShopApiCall {
   late SharedPreferences prefs;
@@ -18,7 +21,11 @@ class ShopApiCall {
   Future<dynamic> getShopByName(String name) async {
     late ShopModel shop;
     try {
+<<<<<<< HEAD
       String url = "${ApiConfig.baseUrl}/shops/getShopByName?name=${name}";
+=======
+      String url = "http://192.168.43.28:5000/shops/getShopByName?name=${name}";
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
       final http.Response resp = await http.get(
         Uri.parse(url),
         headers: <String, String>{
@@ -46,7 +53,11 @@ class ShopApiCall {
   Future<ShopModel> getShopById(String id) async {
     late ShopModel shop;
     try {
+<<<<<<< HEAD
       String url = "${ApiConfig.baseUrl}/shops/getShop/${id}";
+=======
+      String url = "http://192.168.43.28:5000/shops/getShop/${id}";
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
       final http.Response resp = await http.get(
         Uri.parse(url),
         headers: <String, String>{
@@ -74,7 +85,11 @@ class ShopApiCall {
 
   Future<List<dynamic>> CalculateDistance(
       double latitude, double longitude) async {
+<<<<<<< HEAD
     String url = "${ApiConfig.baseUrl}/shops/CalculateDistance";
+=======
+    String url = "http://192.168.43.28:5000/shops/CalculateDistance";
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     try {
       final response = await http.post(
         Uri.parse(url),
@@ -94,7 +109,11 @@ class ShopApiCall {
   }
 
   Future<List<dynamic>> fetchShopProducts(String shopId) async {
+<<<<<<< HEAD
     final url = '${ApiConfig.baseUrl}/shops/getShopProducts/$shopId';
+=======
+    final url = 'http://192.168.43.28:5000/shops/getShopProducts/$shopId';
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     await initSharedPref();
     var token = prefs.getString("userToken");
     try {

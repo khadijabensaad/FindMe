@@ -66,7 +66,11 @@ module.exports.create_account = async (req, res) => {
             image
         });
 
+<<<<<<< HEAD
         await newUser.save();
+=======
+        newUser.save()
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
         // Send verification email
         const emailSent = await sendOTPVerificationEmail({ _id: newUser._id, name: newUser.username, email: newUser.email });
 
@@ -88,7 +92,11 @@ module.exports.create_account = async (req, res) => {
         token = jwt.sign(
             payload,
             process.env.NET_SECRET,
+<<<<<<< HEAD
             { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }, // Token expires in 2 minutes
+=======
+            { expiresIn: '30m' }, // Token expires in 2 minutes
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
             );
         return res.status(200).json({
       status: true,
@@ -270,8 +278,11 @@ module.exports.addToFavorites = async (req,res) => {
       let user = await userModel.findByIdAndUpdate(userId, 
         {$push: { favorites: prodId}},
         {new: true,});
+<<<<<<< HEAD
       // FINDME AI: favorites are the strongest Style DNA signal
       require('../services/catalogRepository').logInteraction({ userId, productId: prodId, type: 'favorite' }).catch(() => {});
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
         
     res.status(200).json({
       status: true,
@@ -322,8 +333,12 @@ module.exports.deleteAllFavorites = async (req, res, next) => {
 module.exports.getUserById = async (req, res, next) => { // 
   try {
       const { id } = req.params;
+<<<<<<< HEAD
     // never expose the password hash on this public endpoint
     const user = await userModel.findById(id).select('-password');
+=======
+    const user = await userModel.findById(id);
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     if (!user) {
       throw new Error("User not found");
     }
@@ -346,8 +361,12 @@ module.exports.getFavorites = async (req, res) => {
       detailedFavorites.push(product);
     }
     const userFavorites= await userModel.findById(req.userId).select('favorites');
+<<<<<<< HEAD
       // a deleted product leaves a null here: skip it instead of crashing
       const productListWithFavorites = detailedFavorites.filter(Boolean).map(product => {
+=======
+      const productListWithFavorites = detailedFavorites.map(product => {
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
         const isFavorite = userFavorites.favorites.includes(product._id);
         return { ...product._doc, isFavorite }; // Adding a property 'isFavorite' to each product
       });
@@ -1508,6 +1527,7 @@ module.exports.UserStats = async (req, res) => {
     res.status(500).json({ message: "Error fetching statistics" });
   }
 };
+<<<<<<< HEAD
 
 
 // ---------------------------------------------------------------------------
@@ -1564,3 +1584,5 @@ module.exports.changePassword = async (req, res) => {
     res.status(500).json({ status: false, message: error.message });
   }
 };
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267

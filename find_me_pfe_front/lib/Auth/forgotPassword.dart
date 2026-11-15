@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:jwt_decoder/jwt_decoder.dart';
+<<<<<<< HEAD
 import 'package:find_me/core/api_config.dart';
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
@@ -36,7 +39,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   Future<void> forgetPassword(String email) async {
     var reqBody = jsonEncode({"email": email});
+<<<<<<< HEAD
     String url = '${ApiConfig.baseUrl}/auth/forgetPassword';
+=======
+    String url = 'http://192.168.43.28:5000/auth/forgetPassword';
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     var response = await http.post(Uri.parse(url),
         headers: {'Content-Type': 'application/json'}, body: reqBody);
     var jsonResponse = jsonDecode(response.body);

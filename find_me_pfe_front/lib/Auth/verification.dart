@@ -6,7 +6,10 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+<<<<<<< HEAD
 import 'package:find_me/core/api_config.dart';
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 class RegisterVerification extends StatefulWidget {
   const RegisterVerification({super.key, required this.userId});
@@ -66,7 +69,11 @@ class _RegisterVerificationState extends State<RegisterVerification> {
 
   Future<void> otpVerification(String otp) async {
     var reqBody = jsonEncode({"userId": widget.userId, "otp": otp});
+<<<<<<< HEAD
     String url = '${ApiConfig.baseUrl}/auth/otp';
+=======
+    String url = 'http://192.168.43.28:5000/auth/otp';
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     var response = await http.post(Uri.parse(url),
         headers: {'Content-Type': 'application/json'}, body: reqBody);
     var jsonResponse = jsonDecode(response.body);
@@ -94,7 +101,11 @@ class _RegisterVerificationState extends State<RegisterVerification> {
     print("name: ${name}");
     var reqBody =
         jsonEncode({"userId": widget.userId, "email": email, "name": name});
+<<<<<<< HEAD
     String url = '${ApiConfig.baseUrl}/auth/resendOtp';
+=======
+    String url = 'http://192.168.43.28:5000/auth/resendOtp';
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     var response = await http.post(Uri.parse(url),
         headers: {'Content-Type': 'application/json'}, body: reqBody);
     var jsonResponse = jsonDecode(response.body);

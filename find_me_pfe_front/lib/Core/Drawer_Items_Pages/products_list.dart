@@ -7,7 +7,10 @@ import 'package:find_me/Services/shop_api.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+<<<<<<< HEAD
 import 'package:find_me/core/api_config.dart';
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 class ShopProductsList extends StatefulWidget {
   const ShopProductsList({super.key, required this.id});
@@ -43,7 +46,11 @@ class _ShopProductsListState extends State<ShopProductsList> {
   Future<void> addToFavorites(String prodId) async {
     await initSharedPref();
     var reqBody = jsonEncode({'prodId': prodId});
+<<<<<<< HEAD
     String url = '${ApiConfig.baseUrl}/auth/addToFavorites';
+=======
+    String url = 'http://192.168.43.28:5000/auth/addToFavorites';
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     var response = await http.put(Uri.parse(url),
         headers: {
           'Content-Type': 'application/json',

@@ -10,7 +10,10 @@ import 'package:http/http.dart' as http;
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+<<<<<<< HEAD
 import 'package:find_me/core/api_config.dart';
+=======
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -63,7 +66,11 @@ class _SignUpState extends State<SignUp> {
   Future<void> signup(
       String username, String email, String password, File file) async {
     var request = http.MultipartRequest(
+<<<<<<< HEAD
         'POST', Uri.parse('${ApiConfig.baseUrl}/auth/signup'));
+=======
+        'POST', Uri.parse('http://192.168.43.28:5000/auth/signup'));
+>>>>>>> 3964aae69b872a8001568f41d0fea4c7d9427267
     request.fields
         .addAll({'username': username, 'email': email, 'password': password});
     request.files.add(await http.MultipartFile.fromPath('file', file.path));
