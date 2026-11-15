@@ -233,19 +233,7 @@ L'adresse du serveur se règle dans `lib/core/api_config.dart` (`10.0.2.2:5000` 
 
 > 🔐 Ne versionne jamais le fichier `.env` : il est dans `.gitignore`.
 
----
 
-## 🧪 Qualité
-
-- **48 tests backend** : extraction de critères FR/EN, validation de la sortie du LLM (marques et prix inventés rejetés), formule de score, Style DNA, relâchement progressif des filtres, conversation multi-tours, géolocalisation (Haversine, rayon, disponibilité vérifiée, élargissement), profil (mot de passe, token expiré → 401).
-- Repli automatique si le LLM est indisponible : l'application continue de répondre.
-
-## 🗺️ Évolutions prévues
-
-- Stock par taille et par boutique (aujourd'hui : disponibilité au niveau de la boutique).
-- Recherche visuelle par embeddings (CLIP) en complément du modèle de vision.
-- Notifications push (Firebase Cloud Messaging) pour les alertes de prix.
-- Tableau de bord enseigne : tendances de recherche et trafic généré.
 
 ---
 
