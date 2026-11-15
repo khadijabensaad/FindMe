@@ -232,8 +232,4 @@ flutter run                                                         # Android / 
 
 
 
----
 
-<div align="center">
-<sub>Stage de fin d'études · Licence Génie Logiciel & SI · ESSTHS Sousse · <b>Dot-IT</b> — enrichi d'une couche IA</sub>
-</div>
