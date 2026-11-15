@@ -228,10 +228,7 @@ cd find_me_pfe_front
 flutter pub get
 flutter run -d chrome --web-browser-flag="--window-size=412,915"   # Web
 flutter run                                                         # Android / iOS
-```
-L'adresse du serveur se règle dans `lib/core/api_config.dart` (`10.0.2.2:5000` pour l'émulateur Android).
 
-> 🔐 Ne versionne jamais le fichier `.env` : il est dans `.gitignore`.
 
 
 
